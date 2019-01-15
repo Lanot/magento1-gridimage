@@ -1,6 +1,4 @@
-# magento1-gridimage
-
-Lanot_GridImage
+# Lanot_GridImage
 
 Extension adds possibility to show product image in products grid on admin page. Supports LightBox2. 
 
