@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento backend layout
+ *
+ * @author Lanot
+ */
+-->
+<layout>
+    <adminhtml_catalog_product_index>
+        <reference name="head">
+            <action method="addJs"><script>lanot/lightbox2/js/lightbox.js</script></action>
+            <action method="addJs"><script>lanot/lightbox2/js/scriptaculous.js?load=effects,builder</script></action>
+            <action method="addItem"><type>skin_css</type><name>lanot/lightbox2/css/lightbox.css</name><params/></action>
+        </reference>
+        <reference name="content">
+            <block type="core/template" template="lanot/gridimage/js.phtml" before="-"/>
+        </reference>
+    </adminhtml_catalog_product_index>
+
+    <adminhtml_sales_order_view>
+        <reference name="order_items">
+            <action method="setTemplate">
+                <template>lanot/gridimage/sales/order/view/items.phtml</template>
+            </action>
+            <action method="addItemRender">
+                <type>default</type>
+                <block>adminhtml/sales_order_view_items_renderer_default</block>
+                <template>lanot/gridimage/sales/order/view/items/renderer/default.phtml</template>
+            </action>
+            <action method="addItemRender">
+                <type>downloadable</type>
+                <block>adminhtml/sales_order_view_items_renderer_default</block>
+                <template>lanot/gridimage/sales/order/view/items/renderer/downloadable.phtml</template>
+            </action>
+            <action method="addItemRender">
+                <type>bundle</type>
+                <block>bundle/adminhtml_sales_order_view_items_renderer</block>
+                <template>lanot/gridimage/sales/order/view/items/renderer/bundle.phtml</template>
+            </action>
+        </reference>
+    </adminhtml_sales_order_view>
+</layout>

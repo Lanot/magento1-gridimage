@@ -1,0 +1,10 @@
+<?php
+$skinUrl = Mage::getDesign()->getSkinBaseUrl(array(
+    '_package' => Mage_Core_Model_Design_Package::DEFAULT_PACKAGE,
+    '_theme' => Mage_Core_Model_Design_Package::DEFAULT_THEME,
+));
+?>
+<script type="text/javascript">
+    LightboxOptions.fileLoadingImage = '<?php echo $skinUrl?>lanot/lightbox2/images/loading.gif';
+    LightboxOptions.fileBottomNavCloseImage = '<?php echo $skinUrl?>lanot/lightbox2/images/closelabel.gif';
+</script>

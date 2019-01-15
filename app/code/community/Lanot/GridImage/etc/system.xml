@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <lanot translate="label">
+            <label>Lanot Extensions</label>
+            <sort_order>200</sort_order>
+        </lanot>
+    </tabs>
+    <sections>
+        <lanot_gridimage>
+            <class>separator-top</class>
+            <label>Grid Image</label>
+            <tab>lanot</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>800</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>0</show_in_website>
+            <show_in_store>0</show_in_store>
+            <groups>
+                <catalog_product translate="label">
+                    <label>Catalog Grid Image Settings</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+                        <enabled translate="label">
+                            <label>Enabled at Products Grid</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </enabled>
+
+                        <image_click translate="label">
+                            <label>Allow open image by on click</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </image_click>
+
+                        <lightbox_enabled translate="label">
+                            <depends><image_click>1</image_click></depends>
+                            <label>Use Ligthbox</label>
+                            <comment>Floating window for showing images</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>25</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </lightbox_enabled>
+
+                        <image_class translate="label">
+                            <label>Image CSS class</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </image_class>
+
+                        <image_size translate="label">
+                            <label>Image size</label>
+                            <comment>Size (Ex. 100x100) for Product Image</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </image_size>
+
+                        <image_big_size translate="label">
+                            <label>Big Image size</label>
+                            <comment>Size (Ex. 600x600) for Product Image, that is opened by click</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </image_big_size>
+                    </fields>
+                </catalog_product>
+            </groups>
+        </lanot_gridimage>
+    </sections>
+</config>

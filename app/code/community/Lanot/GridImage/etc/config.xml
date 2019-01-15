@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+
+    <modules>
+        <Lanot_GridImage>
+            <version>1.1.0</version>
+        </Lanot_GridImage>
+    </modules>
+
+    <global>
+        <helpers>
+            <lanot_gridimage>
+                <class>Lanot_GridImage_Helper</class>
+            </lanot_gridimage>
+        </helpers>
+
+        <blocks>
+            <lanot_gridimage>
+                <class>Lanot_GridImage_Block</class>
+            </lanot_gridimage>
+        </blocks>
+
+        <models>
+            <lanot_gridimage>
+                <class>Lanot_GridImage_Model</class>
+                <resourceModel>lanot_gridimage_resource</resourceModel>
+            </lanot_gridimage>
+        </models>
+
+        <lanot_gridimage_resource>
+            <class>Lanot_GridImage_Model_Mysql4</class>
+        </lanot_gridimage_resource>
+    </global>
+
+    <adminhtml>
+        <!-- OBSERVER EVENTS -->
+        <events>
+            <!-- ADMIN HTML BLOCK EVENTS -->
+            <adminhtml_block_html_before>
+                <observers>
+                    <lanot_gridimage>
+                        <type>singleton</type>
+                        <class>lanot_gridimage/observer</class>
+                        <method>adminhtmlBlockHtmlBefore</method>
+                    </lanot_gridimage>
+                </observers>
+            </adminhtml_block_html_before>
+            <!--/ADMIN HTML BLOCK EVENTS -->
+        </events>
+        <!--/OBSERVER EVENTS -->
+
+        <layout>
+            <updates>
+                <lanot_gridimage>
+                    <file>lanot_gridimage.xml</file>
+                </lanot_gridimage>
+            </updates>
+        </layout>
+    </adminhtml>
+
+    <default>
+        <lanot_gridimage>
+            <catalog_product>
+                <enabled>1</enabled>
+                <image_click>1</image_click>
+                <lightbox_enabled>1</lightbox_enabled>
+                <image_class>product_thumbnail</image_class>
+                <image_size>120x120</image_size>
+                <image_big_size>600x600</image_big_size>
+            </catalog_product>
+
+            <sales_order_items>
+                <enabled>1</enabled>
+                <image_class>product_thumbnail</image_class>
+                <image_size>60x60</image_size>
+            </sales_order_items>
+
+            <!-- rules for matching -->
+            <rules>
+                <enabled>
+                    <Mage_Adminhtml_Block_Catalog_Product_Grid handler="lanot_gridimage/handler_catalog_product" after="entity_id"/>
+                    <Mage_Adminhtml_Block_Sales_Order_View_Items handler="lanot_gridimage/handler_sales_order_items"/>
+                </enabled>
+
+                <disabled>
+                    <Mage_Adminhtml_Block_Review_Product_Grid/>
+                    <Mage_Adminhtml_Block_Urlrewrite_Product_Grid/>
+                </disabled>
+            </rules>
+            <!-- /rules for matching -->
+        </lanot_gridimage>
+    </default>
+</config>
